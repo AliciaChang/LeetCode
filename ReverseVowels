@@ -1,0 +1,16 @@
+class Solution(object):
+    def reverseVowels(self, s):
+        vowels = ["A","E","I","O","U","a","e","i","o","u"]
+        ls_vowels = list()
+        ls_s = list(s)
+        for i in ls_s:
+            if i in vowels:
+                ls_vowels.append(i)
+        for i in range(0, len(ls_s)):
+            if ls_s[i] in vowels:
+                ls_s[i] = ls_vowels[-1]
+                ls_vowels.pop()
+        new = ''.join(ls_s)
+        return new
+            
+Solution().reverseVowels("My name is Alicia")
